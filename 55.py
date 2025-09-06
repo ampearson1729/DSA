@@ -3,13 +3,13 @@ class Solution:
         dpt = [False]*len(nums); dpt[-1] = True # Initalize dp table
         sqrs = nums[:-1]
         target = len(sqrs)
-        #import pdb; pdb.set_trace()
         for i, maxJmp in reversed(list(enumerate(sqrs))):
             for jmp in range(1,maxJmp+1):
                 if i+jmp <= target and dpt[i+jmp]:
                     dpt[i] = True
                     break
         return dpt[0]
+
 
 
 if __name__ == "__main__":
